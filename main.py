@@ -68,7 +68,7 @@ def get_birthday_left():
     next = next.replace(year=next.year + 1)
   return (next - today).days
   
- def get_birthday_left_1():
+def get_birthday_left_1():
   if birthday is None:
     print('没有设置 BIRTHDAY1')
     return 0
