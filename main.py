@@ -12,7 +12,7 @@ today = datetime.strptime(str(nowtime.date()), "%Y-%m-%d") #今天的日期
 start_date = os.getenv('START_DATE')
 city = os.getenv('CITY')
 birthday = os.getenv('BIRTHDAY')
-birthday1 = os.getenv('BIRTHDAY1')
+birthday1 = os.getenv['BIRTHDAY1']
 
 app_id = os.getenv('APP_ID')
 app_secret = os.getenv('APP_SECRET')
