@@ -12,6 +12,7 @@ today = datetime.strptime(str(nowtime.date()), "%Y-%m-%d") #今天的日期
 start_date = os.getenv('START_DATE')
 city = os.getenv('CITY')
 birthday = os.getenv('BIRTHDAY')
+birthday1 = os.getenv('BIRTHDAY1')
 
 app_id = os.getenv('APP_ID')
 app_secret = os.getenv('APP_SECRET')
@@ -63,6 +64,15 @@ def get_birthday_left():
     print('没有设置 BIRTHDAY')
     return 0
   next = datetime.strptime(str(today.year) + "-" + birthday, "%Y-%m-%d")
+  if next < nowtime:
+    next = next.replace(year=next.year + 1)
+  return (next - today).days
+  
+ def get_birthday_left_1():
+  if birthday is None:
+    print('没有设置 BIRTHDAY1')
+    return 0
+  next = datetime.strptime(str(today.year) + "-" + birthday1, "%Y-%m-%d")
   if next < nowtime:
     next = next.replace(year=next.year + 1)
   return (next - today).days
@@ -143,6 +153,10 @@ data = {
   },
   "birthday_left": {
     "value": get_birthday_left(),
+    "color": get_random_color()
+  },
+  "birthday_left_1": {
+    "value": get_birthday_left_1(),
     "color": get_random_color()
   },
   "words": {
