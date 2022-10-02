@@ -69,7 +69,7 @@ def get_birthday_left():
   return (next - today).days
   
 def get_birthday_left_1():
-  if birthday is None:
+  if birthday1 is None:
     print('没有设置 BIRTHDAY1')
     return 0
   next1 = datetime.strptime(str(today.year) + "-" + birthday1, "%Y-%m-%d")
