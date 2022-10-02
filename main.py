@@ -72,10 +72,10 @@ def get_birthday_left_1():
   if birthday is None:
     print('没有设置 BIRTHDAY1')
     return 0
-  next = datetime.strptime(str(today.year) + "-" + birthday1, "%Y-%m-%d")
-  if next < nowtime:
-    next = next.replace(year=next.year + 1)
-  return (next - today).days
+  next1 = datetime.strptime(str(today.year) + "-" + birthday1, "%Y-%m-%d")
+  if next1 < nowtime:
+    next1 = next1.replace(year=next.year + 1)
+  return (next1 - today).days
 
 # 彩虹屁 接口不稳定，所以失败的话会重新调用，直到成功
 def get_words():
