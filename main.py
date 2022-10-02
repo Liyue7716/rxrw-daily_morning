@@ -12,7 +12,7 @@ today = datetime.strptime(str(nowtime.date()), "%Y-%m-%d") #今天的日期
 start_date = os.getenv('START_DATE')
 city = os.getenv('CITY')
 birthday = os.getenv('BIRTHDAY')
-birthday1 = os.getenv('BIRTHDAY_Ww')
+birthday1 = os.getenv('BIRTHDAY1')
 
 app_id = os.getenv('APP_ID')
 app_secret = os.getenv('APP_SECRET')
@@ -70,7 +70,7 @@ def get_birthday_left():
   
 def get_birthday_left_1():
   if birthday1 is None:
-    print('没有设置 BIRTHDAY_Ww')
+    print('没有设置 BIRTHDAY1')
     return 0
   next1 = datetime.strptime(str(today.year) + "-" + birthday1, "%Y-%m-%d")
   if next1 < nowtime:
